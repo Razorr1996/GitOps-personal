@@ -11,6 +11,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./cluster-services/goldpinger
+  path: ./cluster-services/goldpinger/overlays/ha
   prune: true
   wait: true

@@ -11,6 +11,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./apps/nginx1/overlays/ha
+  path: "./apps/nginx1/overlays/ha"
   prune: true
   wait: true

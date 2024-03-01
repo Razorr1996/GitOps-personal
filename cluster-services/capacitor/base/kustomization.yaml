@@ -4,3 +4,4 @@ namespace: capacitor
 resources:
   - ocirepository.yaml
   - service.yaml
+  - namespace.yaml

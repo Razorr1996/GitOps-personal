@@ -14,3 +14,19 @@ spec:
   path: "./cluster-services/goldpinger/overlays/ha"
   prune: true
   wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cs-openebs
+  namespace: flux-system
+spec:
+  interval: 1h
+  retryInterval: 1m
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: "./cluster-services/openebs/overlays/ha"
+  prune: true
+  wait: true

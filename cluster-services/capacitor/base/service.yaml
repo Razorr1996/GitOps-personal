@@ -10,5 +10,5 @@ spec:
   type: NodePort
   ports:
     - port: 9000
-      nodePort: 32080
+      nodePort: 30180
       name: http

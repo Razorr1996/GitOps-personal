@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: mongodb-exporter
+spec:
+  releaseName: prometheus-mongodb-exporter
+  chart:
+    spec:
+      chart: prometheus-mongodb-exporter
+      sourceRef:
+        kind: HelmRepository
+        name: prometheus-community
+        namespace: prometheus
+      version: 3.5.0
+  interval: 30m
+  install:
+    remediation:
+      retries: 3
+  values:
+    mongodb:
+      uri: "mongodb://mongodb-service:27017"
+    serviceMonitor:
+      enabled: true
+      additionalLabels:
+        release: prometheus

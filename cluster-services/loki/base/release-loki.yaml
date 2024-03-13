@@ -1,0 +1,29 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: loki
+spec:
+  releaseName: loki
+  chart:
+    spec:
+      chart: loki
+      sourceRef:
+        kind: HelmRepository
+        name: grafana
+      version: 5.43.6
+  interval: 30m
+  install:
+    remediation:
+      retries: 3
+  values:
+    loki:
+      auth_enabled: false
+    minio:
+      enabled: true
+    monitoring:
+      selfMonitoring:
+        enabled: true
+    read:
+      replicas: 2
+    write:
+      replicas: 2

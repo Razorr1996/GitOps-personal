@@ -16,6 +16,8 @@ spec:
     remediation:
       retries: 3
   values:
+    backend:
+      replicas: 2
     loki:
       auth_enabled: false
     minio:

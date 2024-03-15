@@ -6,3 +6,4 @@ resources:
   - service.yaml
   - serviceaccount.yaml
   - clusterrolebinding.yaml
+  - ingress.yaml

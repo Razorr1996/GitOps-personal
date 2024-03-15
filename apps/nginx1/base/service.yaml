@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: nginx1
 spec:
+  type: LoadBalancer
   selector:
     app: nginx1
   ports:
